@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everton Mota | Software Engineer & Cybersecurity Specialist</title>
+
+    <!-- Meta tags SEO -->
+    <meta name="description"
+        content="Portfólio 3D premium de Everton Mota, Engenheiro de Software e especialista em Cibersegurança, Inteligência Artificial e Desenvolvimento Web.">
+    <meta name="keywords"
+        content="Everton Mota, Engenharia de Software, Cibersegurança, Cybersecurity, Inteligência Artificial, Web Design 3D, Three.js, GSAP, Portfólio Premium">
+    <meta name="author" content="Everton Mota">
+
+    <!-- Social Share Meta -->
+    <meta property="og:title" content="Everton Mota | Software Engineer & Cybersecurity Specialist">
+    <meta property="og:description"
+        content="Explore o centro de comando tecnológico e portfólio 3D interativo de Everton Mota.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://evertonmota.dev/assets/cyber-dossier-preview.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;600&family=Sora:wght@400;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Terminal de Boot / Loading Futurista -->
+    <div id="cyber-loader" class="loader-overlay">
+        <div class="loader-bg-noise"></div>
+        <div class="loader-scanline"></div>
+        <div class="loader-content">
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">SYS_INITIALIZATION // ENCRYPT_CORE</span>
+            </div>
+            <div class="terminal-body" id="loader-terminal-body">
+                <p class="term-line loading-text">> ESTABLISHING SECURE PORTFOLIO TUNNEL...</p>
+                <p class="term-line loading-text">> INITIALIZING INTEL_AGENT: EVERTON_MOTA</p>
+                <p class="term-line loading-text">> LOADING CYBERSECURITY VAULT [OWASP_V12]</p>
+                <p class="term-line loading-text">> CONFIGURING THREE.JS WEBGL RENDER ENVIRONMENT...</p>
+                <p class="term-line loading-text">> SYNTHESIZING WAVE AUDIO FREQUENCY OSCILLATORS...</p>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar-glitch"></div>
+                <div class="progress-bar-wrapper">
+                    <div id="loader-progress-bar" class="progress-bar" style="width: 0%;"></div>
+                </div>
+                <div class="progress-status">
+                    <span id="loader-status-text">DECRYPTING SYSTEM DATA</span>
+                    <span id="loader-percent">00%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cursor Holográfico Personalizado -->
+    <div id="cyber-cursor" class="custom-cursor">
+        <div class="cursor-ring"></div>
+        <div class="cursor-dot"></div>
+    </div>
+
+    <!-- Grid e Efeitos de Background Globais -->
+    <div class="global-cyber-grid"></div>
+    <div class="global-vignette"></div>
+    <div class="particles-bg-canvas-container">
+        <canvas id="ambient-particles"></canvas>
+    </div>
+
+    <!-- Overlay HUD Cinematic -->
+    <div class="hud-border-top"></div>
+    <div class="hud-border-bottom"></div>
+
+    <!-- Header / Menu Superior -->
+    <header class="hud-header">
+        <div class="hud-logo">
+            <span class="cyber-badge neon-pulse-blue">E.MOTA</span>
+        </div>
+        <nav class="hud-nav">
+            <a href="#hero" class="nav-item active" data-sound="hover"><span class="nav-index">01</span> INÍCIO</a>
+            <a href="#about" class="nav-item" data-sound="hover"><span class="nav-index">02</span> SOBRE</a>
+            <a href="#skills" class="nav-item" data-sound="hover"><span class="nav-index">03</span> CONHECIMENTOS</a>
+            <a href="#projects" class="nav-item" data-sound="hover"><span class="nav-index">04</span> PROJETOS</a>
+            <a href="#dashboard" class="nav-item" data-sound="hover"><span class="nav-index">05</span> PAINEL</a>
+            <a href="#contact" class="nav-item" data-sound="hover"><span class="nav-index">06</span> CONTATO</a>
+        </nav>
+        <div class="hud-controls">
+            <!-- Audio Switcher Synth -->
+            <button id="audio-toggle" class="control-btn" title="Alternar Efeitos Sonoros" data-sound="click">
+                <svg id="audio-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+                <svg id="audio-icon-off" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                    stroke-width="2" class="hidden">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                </svg>
+                <span class="btn-text">ÁUDIO: ATIVO</span>
+            </button>
+            <span class="system-time" id="hud-time">11:18:35</span>
+        </div>
+    </header>
+
+    <!-- Indicador de Scroll Lateral -->
+    <div class="hud-sidebar-indicator">
+        <div class="indicator-line"></div>
+        <div class="indicator-label">SCROLL TO ANALYZE</div>
+    </div>
+
+    <!-- MAIN PORTFOLIO -->
+    <main class="portfolio-container">
+
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="hero-section text-glow-effects">
+            <!-- Background Video Animação -->
+            <div class="hero-bg-video-container">
+                <video autoplay loop muted playsinline class="hero-bg-video">
+                    <source src="fts/Character_stands_up_confidently_202605311053-ezgif.com-resize-video.mp4"
+                        type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="hero-video-overlay"></div>
+            </div>
+
+            <div class="section-container hero-grid">
+
+                <!-- Informações do Everton -->
+                <div class="hero-info-panel">
+                    <div class="cyber-pretitle-container">
+                        <span class="cyber-tag-glow ciano">ENG_SOFTWARE_AGENT</span>
+                        <div class="cyber-line-decoration"></div>
+                    </div>
+
+                    <h1 class="hero-name" id="hero-title-glitch" data-text="Everton Mota">Everton Mota</h1>
+
+                    <h2 class="hero-title">
+                        <span>Software Engineer &</span>
+                        <span class="neon-text-cyan glow-cyber-blue">Cybersecurity Student</span>
+                    </h2>
+
+                    <p class="hero-subtitle">
+                        "Transformando ideias em experiências web inovadoras através de desenvolvimento moderno,
+                        engenharia de software robusta, inteligência artificial integrada e arquitetura de segurança de
+                        ponta."
+
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="cyber-btn primary-cyber" data-sound="click">
+                            <span class="btn-glow"></span>
+                            <span class="btn-content">ANALISAR PROJETOS <span class="arrow">//</span></span>
+                        </a>
+                        <a href="#" class="cyber-btn secondary-cyber" id="download-cv" data-sound="click">
+                            <span class="btn-content">DOWNLOAD CV</span>
+                        </a>
+                        <a href="#contact" class="cyber-btn text-cyber-link" data-sound="click">
+                            <span class="btn-content">CONECTAR SYSTEM</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-footer-diagnostics">
+                        <div class="diag-node">
+                            <span class="node-status green"></span>
+                            <span class="node-txt">SECURE ENVIRONMENT: ON</span>
+                        </div>
+                        <div class="diag-node">
+                            <span class="node-status cyan"></span>
+                            <span class="node-txt">AI CORE: READY</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WebGL Hologram Core Canvas e Moldura HUD -->
+                <div class="hero-visual-panel">
+                    <div class="hud-frame-3d">
+                        <div class="hud-glare"></div>
+                        <div class="hud-frame-corners">
+                            <div class="corner top-left"></div>
+                            <div class="corner top-right"></div>
+                            <div class="corner bottom-left"></div>
+                            <div class="corner bottom-right"></div>
+                        </div>
+                        <div class="hud-frame-status">
+                            <span class="hud-pulse-node"></span>
+                            <span class="status-title">NEURAL CORE MODEL 3D</span>
+                            <span class="hud-fps-indicator" id="hologram-fps">60 FPS</span>
+                        </div>
+
+                        <!-- Canvas do Tridimensional -->
+                        <div class="canvas-3d-wrapper">
+                            <canvas id="hero-hologram-canvas"></canvas>
+                        </div>
+
+                        <!-- Overlay de Informações Tecnológicas -->
+                        <div class="hud-frame-analytics">
+                            <div class="analytic-line">
+                                <span class="lbl">HOLOG_SCALE:</span>
+                                <span class="val" id="hologram-scale-val">1.000</span>
+                            </div>
+                            <div class="analytic-line">
+                                <span class="lbl">ROTATE_Y:</span>
+                                <span class="val" id="hologram-rot-val">0.00°</span>
+                            </div>
+                            <div class="analytic-line">
+                                <span class="lbl">STABILITY:</span>
+                                <span class="val green">99.8%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 2. SOBRE MIM -->
+        <section id="about" class="about-section scroll-reveal">
+            <div class="section-container">
+                <div class="cyber-section-header">
+                    <span class="sec-index">02 // DOSSIER</span>
+                    <h2 class="sec-title">SOBRE O ENGENHEIRO</h2>
+                    <div class="sec-divider"></div>
+                </div>
+
+                <div class="about-grid">
+                    <!-- Painel de Dados do Profile (Dossier) -->
+                    <div class="dossier-card glass-panel">
+                        <div class="dossier-header">
+                            <div class="profile-photo-container">
+                                <!-- Elemento Procedural Futurista (no photo placeholder) -->
+                                <div class="profile-glitch-avatar">
+                                    <div class="avatar-static-lines"></div>
+                                    <div class="avatar-scanner"></div>
+                                    <!-- Dynamic SVG graphic looking like an interactive security fingerprint/face scanner -->
+                                    <svg viewBox="0 0 100 100" class="avatar-hud-svg">
+                                        <circle cx="50" cy="50" r="45" fill="none" stroke="#00E5FF" stroke-width="1"
+                                            stroke-dasharray="5 5"></circle>
+                                        <circle cx="50" cy="50" r="35" fill="none" stroke="#0099FF" stroke-width="1.5"
+                                            stroke-dasharray="20 10"></circle>
+                                        <path d="M30 40 Q 50 20 70 40 Q 50 60 30 40" fill="none" stroke="#00BFFF"
+                                            stroke-width="2" class="glitch-path-1"></path>
+                                        <path d="M40 65 Q 50 85 60 65" fill="none" stroke="#00E5FF" stroke-width="2"
+                                            class="glitch-path-2"></path>
+                                        <line x1="50" y1="10" x2="50" y2="90" stroke="rgba(0, 229, 255, 0.2)"
+                                            stroke-width="1"></line>
+                                        <line x1="10" y1="50" x2="90" y2="50" stroke="rgba(0, 229, 255, 0.2)"
+                                            stroke-width="1"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="dossier-ident">
+                                <h3 class="ident-name">Everton Mota</h3>
+                                <p class="ident-subtitle">Software Engineering Student</p>
+                                <span class="dossier-badge neon-pulse-cyan">REGISTRY: ACTIVE</span>
+                            </div>
+                        </div>
+
+                        <div class="dossier-specs">
+                            <div class="spec-row">
+                                <span class="label"><svg viewBox="0 0 24 24" width="14" height="14" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path
+                                            d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                                        </path>
+                                    </svg> FORMAÇÃO:</span>
+                                <span class="val">Engenharia de Software</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="label"><svg viewBox="0 0 24 24" width="14" height="14" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg> ESPECIALIDADE:</span>
+                                <span class="val">Cybersecurity / Web Development / IA</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="label"><svg viewBox="0 0 24 24" width="14" height="14" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                        </path>
+                                    </svg> WEBDEV STATUS:</span>
+                                <span class="val">Next.js / Node.js </span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="label"><svg viewBox="0 0 24 24" width="14" height="14" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                        <polyline points="2 17 12 22 22 17"></polyline>
+                                        <polyline points="2 12 12 17 22 12"></polyline>
+                                    </svg> AUTOMAÇÃO:</span>
+                                <span class="val">Agentes Inteligentes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Texto Descritivo e Painel de Insights -->
+                    <div class="dossier-bio-panel">
+                        <!-- Background Animado com Imagem -->
+                        <div class="dossier-bg-anim-container">
+                            <div class="dossier-bg-image"
+                                style="background-image: url('fts/ChatGPT Image 30 de mai. de 2026, 22_43_50.png');">
+                            </div>
+                            <div class="dossier-bg-overlay"></div>
+                        </div>
+
+                        <div class="glass-panel bio-content">
+                            <h4 class="bio-title"><span class="glow-cyber-blue">MISSION_OBJECTIVE //</span></h4>
+                            <p class="bio-text">
+                                "Sou estudante de Engenharia de Software apaixonado por tecnologia, desenvolvimento de
+                                sistemas complexos e cibersegurança. Busco criar soluções digitais modernas que unem
+                                inovação de ponta, performance computacional otimizada e uma experiência de usuário
+                                premium extremamente fluida."
+                            </p>
+                            <p class="bio-text">
+                                Com expertise em JavaScript, TypeScript, Python, Java e tecnologias modernas para
+                                desenvolvimento web, aplico os princípios da OWASP, arquitetura de software limpa e boas
+                                práticas de segurança para construir aplicações resilientes, escaláveis e de alta
+                                performance. Minha missão é unir cibersegurança,
+                                inteligência artificial e engenharia de software para criar soluções digitais
+                                inovadoras, seguras e visualmente impactantes.
+                            </p>
+                        </div>
+
+                        <!-- Grid de Indicadores de Operação -->
+                        <div class="operational-grid">
+                            <div class="op-stat glass-panel">
+                                <span class="op-val glow-cyber-cyan" id="stat-projects-count">03</span>
+                                <span class="op-lbl">PROJETOS ATIVOS</span>
+                            </div>
+                            <div class="op-stat glass-panel">
+                                <span class="op-val glow-cyber-blue" id="stat-sec-score">99%</span>
+                                <span class="op-lbl">SECU_COMPLIANT</span>
+                            </div>
+                            <div class="op-stat glass-panel">
+                                <span class="op-val glow-cyber-cyan" id="stat-hours-dev">2.4K</span>
+                                <span class="op-lbl">CODING_LOGS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 3. HABILIDADES (SKILLS) -->
+        <section id="skills" class="skills-section scroll-reveal">
+            <div class="section-container">
+                <div class="cyber-section-header">
+                    <span class="sec-index">03 // CAPABILITIES</span>
+                    <h2 class="sec-title">MATRIZ DE HABILIDADES</h2>
+                    <div class="sec-divider"></div>
+                </div>
+
+                <!-- Barra de Filtros de Tecnologia -->
+                <div class="skills-filters">
+                    <button class="filter-btn active" data-filter="all" data-sound="click">ALL_MODULES</button>
+                    <button class="filter-btn" data-filter="frontend" data-sound="click">FRONTEND</button>
+                    <button class="filter-btn" data-filter="backend" data-sound="click">BACKEND</button>
+                    <button class="filter-btn" data-filter="security" data-sound="click">CYBERSECURITY</button>
+                    <button class="filter-btn" data-filter="tools" data-sound="click">TOOLS_&_AI</button>
+                </div>
+
+                <!-- Grid de Cards Holográficos -->
+                <div class="skills-grid" id="skills-cards-container">
+
+                    <!-- FRONTEND CARDS -->
+                    <div class="skill-card glass-panel tilt-card" data-category="frontend">
+                        <div class="card-glow-overlay"></div>
+                        <div class="skill-header">
+                            <span class="skill-icon frontend"></span>
+                            <span class="skill-name">React / Next.js</span>
+                            <span class="skill-level">95%</span>
+                        </div>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-fill front-color" style="width: 95%;"></div>
+                        </div>
+                        <p class="skill-desc">Aplicações SPA/SSR com foco em performance extrema, componentização
+                            moderna, renderização dinâmica e SEO.</p>
+                        <div class="card-meta">SYS_COMP_01: STABLE</div>
+                    </div>
+
+                    <div class="skill-card glass-panel tilt-card" data-category="frontend">
+                        <div class="card-glow-overlay"></div>
+                        <div class="skill-header">
+                            <span class="skill-icon frontend"></span>
+                            <span class="skill-name">TypeScript / JS</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-fill front-color" style="width: 90%;"></div>
+                        </div>
+                        <p class="skill-desc">JavaScript moderno (ES6+) tipado estaticamente para evitar erros em
+                            produção e acelerar o desenvolvimento.</p>
+                        <div class="card-meta">SYS_COMP_02: STABLE</div>
+                    </div>
+
+                    <div class="skill-card glass-panel tilt-card" data-category="frontend">
+                        <div class="card-glow-overlay"></div>
+                        <div class="skill-header">
+                            <span class="skill-icon frontend"></span>
+                            <span class="skill-name">HTML5 / Vanilla CSS3</span>
+                            <span class="skill-level">95%</span>
+                        </div>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-fill front-color" style="width: 95%;"></div>
+                        </div>
+                        <p class="skill-desc">Desenho semântico e estilização responsiva ultra customizada, com
+                            animações por hardware e layout flexível.</p>
+                        <div class="card-meta">SYS_COMP_03: OPTIMIZED</div>
+                    </div>
+
+                    <!-- BACKEND CARDS -->
+                    <div class="skill-card glass-panel tilt-card" data-category="backend">
+                        <div class="card-glow-overlay"></div>
+                        <div class="skill-header">
+                            <span class="skill-icon backend"></span>
+                            <span class="skill-name">Node.js Ecosystem</span>
+                            <span class="skill-level">88%</span>
+                        </div>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-fill back-color" style="width: 88%;"></div>
+                        </div>
+                        <p class="skill-desc">Desenvolvimento assíncrono de microsserviços rápidos, gerenciamento de
+                            pacotes e rotas de middleware seguras.</p>
+                        <div class="card-meta">SYS_COMP_04: STABLE</div>
+                    </div>
+
+                    <div class="skill-card glass-panel tilt-card" data-category="backend">
+                        <div class="card-glow-overlay"></div>
+                        <div class="skill-header">
+                            <span class="skill-icon backend"></span>
+                            <span class="skill-name">APIs RESTful</span>
+                            <span class="skill-level">92%</span>
+                        </div>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-fill back-color" style="width: 92%;"></div>
+                        </div>
+                        <p class="skill-desc">Arquitetura de integrações padronizada, autenticação JWT, tratamento
+                            correto de erros HTTP e rate limiting.</p>
+                        <div class="card-meta">SYS_COMP_05: ONLINE</div>
+                    </div>
+
+                    <div class="skill-card glass-panel tilt-card" data-category="backend">
+                        <div class="card-glow-overlay"></div>
+                        <div class="skill-header">
+                            <span class="skill-icon backend"></span>
+                            <span class="skill-name">Banco de Dados</span>
+                            <span class="skill-level">85%</span>
+                        </div>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-fill back-color" style="width: 85%;"></div>
+                        </div>
+                        <p class="skill-desc">Modelagem relacional (SQL) e não-relacional (NoSQL), otimização de queries
+                            de busca e replicação de dados.</p>
+                        <div class="card-meta">SYS_COMP_06: CONNECTED</div>
+                    </div>
+
+                    <!-- CYBERSECURITY -->
+                    <div class="skill-card glass-panel tilt-card" data-category="security">
+                        <div class="card-glow-overlay"></div>
+                        <div class="skill-header">
+                            <span class="skill-icon security"></span>
+                            <span class="skill-name">Segurança Web</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-fill sec-color" style="width: 90%;"></div>
+                        </div>
+                        <p class="skill-desc">Implementação de certificados, sanitização de inputs, proteção CORS,
+                            Headers de segurança contra ataques web.</p>
+                        <div class="card-meta">SYS_COMP_07: ENFORCED</div>
+                    </div>
+
+                    <div class="skill-card glass-panel tilt-card" data-category="security">
+                        <div class="card-glow-overlay"></div>
+                        <div class="skill-header">
+                            <span class="skill-icon security"></span>
+                            <span class="skill-name">OWASP Standards</span>
+                            <span class="skill-level">85%</span>
+                        </div>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-fill sec-color" style="width: 85%;"></div>
+                        </div>
+                        <p class="skill-desc">Auditoria preventiva contra SQLi, XSS, SSRF, Broken Access Control e
+                            vazamento inseguro de credenciais.</p>
+                        <div class="card-meta">SYS_COMP_08: COMPLIANT</div>
+                    </div>
+
+                    <div class="skill-card glass-panel tilt-card" data-category="security">
+                        <div class="card-glow-overlay"></div>
+                        <div class="skill-header">
+                            <span class="skill-icon security"></span>
+                            <span class="skill-name">Vulnerability Analysis</span>
+                            <span class="skill-level">80%</span>
+                        </div>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-fill sec-color" style="width: 80%;"></div>
+                        </div>
+                        <p class="skill-desc">Varreduras estáticas (SAST) e dinâmicas (DAST) em código-fonte de sistemas
+                            para identificar bugs de segurança.</p>
+                        <div class="card-meta">SYS_COMP_09: SHIELD_ON</div>
+                    </div>
+
+                    <!-- TOOLS -->
+                    <div class="skill-card glass-panel tilt-card" data-category="tools">
+                        <div class="card-glow-overlay"></div>
+                        <div class="skill-header">
+                            <span class="skill-icon tools"></span>
+                            <span class="skill-name">Git & GitHub</span>
+                            <span class="skill-level">95%</span>
+                        </div>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-fill tool-color" style="width: 95%;"></div>
+                        </div>
+                        <p class="skill-desc">Controle de versionamento avançado, estruturação de branches, code review
+                            automatizado e CI/CD via Actions.</p>
+                        <div class="card-meta">SYS_COMP_10: STABLE</div>
+                    </div>
+
+                    <div class="skill-card glass-panel tilt-card" data-category="tools">
+                        <div class="card-glow-overlay"></div>
+                        <div class="skill-header">
+                            <span class="skill-icon tools"></span>
+                            <span class="skill-name">Docker Containers</span>
+                            <span class="skill-level">82%</span>
+                        </div>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-fill tool-color" style="width: 82%;"></div>
+                        </div>
+                        <p class="skill-desc">Isolamento completo de ambientes de execução locais e de produção em
+                            containers otimizados e leves.</p>
+                        <div class="card-meta">SYS_COMP_11: ISOLATED</div>
+                    </div>
+
+                    <div class="skill-card glass-panel tilt-card" data-category="tools">
+                        <div class="card-glow-overlay"></div>
+                        <div class="skill-header">
+                            <span class="skill-icon tools"></span>
+                            <span class="skill-name">IA Generativa & Prompts</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-fill tool-color" style="width: 90%;"></div>
+                        </div>
+                        <p class="skill-desc">Integração de LLMs no fluxo de desenvolvimento, aceleração de código,
+                            geração e automação de processos inteligentes.</p>
+                        <div class="card-meta">SYS_COMP_12: ACTIVE</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 4. SEÇÃO PROJETOS -->
+        <section id="projects" class="projects-section scroll-reveal">
+            <div class="section-container">
+                <div class="cyber-section-header">
+                    <span class="sec-index">04 // REPOSITORY</span>
+                    <h2 class="sec-title">SOLUÇÕES DESENVOLVIDAS</h2>
+                    <div class="sec-divider"></div>
+                </div>
+
+                <!-- Grid de Projetos 3D -->
+                <div class="projects-grid">
+
+                    <!-- PROJETO 1 -->
+                    <article class="project-card glass-panel tilt-card" data-sound="hover">
+                        <div class="project-header-panel">
+                            <!-- Procedural Cyber Background Visual instead of dead image placeholder -->
+                            <div class="project-visual-container">
+                                <div class="cyber-scan-glow"></div>
+                                <svg viewBox="0 0 200 120" class="project-vector-hud">
+                                    <defs>
+                                        <linearGradient id="cyan-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.8" />
+                                            <stop offset="100%" stop-color="#0099FF" stop-opacity="0.2" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect x="10" y="10" width="180" height="100" fill="url(#cyan-blue)" rx="8"
+                                        stroke="rgba(0, 229, 255, 0.4)" stroke-width="1.5"></rect>
+                                    <!-- Dynamic Code Representation -->
+                                    <line x1="25" y1="30" x2="100" y2="30" stroke="#FFFFFF" stroke-width="3"
+                                        stroke-linecap="round"></line>
+                                    <line x1="25" y1="45" x2="150" y2="45" stroke="#00E5FF" stroke-width="2.5"
+                                        stroke-linecap="round"></line>
+                                    <line x1="25" y1="60" x2="120" y2="60" stroke="#00BFFF" stroke-width="2"
+                                        stroke-linecap="round"></line>
+                                    <line x1="25" y1="75" x2="80" y2="75" stroke="#FFFFFF" stroke-width="2"
+                                        stroke-linecap="round"></line>
+                                    <circle cx="160" cy="80" r="12" fill="#050505" stroke="#00E5FF" stroke-width="2">
+                                    </circle>
+                                    <path d="M156 80 L160 84 L166 76" fill="none" stroke="#00E5FF" stroke-width="2">
+                                    </path>
+                                </svg>
+                                <span class="project-node-tag online">ONLINE</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-row">
+                                <span class="project-code">MODULE_01 // CV_GEN</span>
+                                <span class="project-version">v1.2.0</span>
+                            </div>
+                            <h3 class="project-title">Gerador Inteligente de Currículos</h3>
+                            <p class="project-description">
+                                Plataforma avançada baseada em IA que auxilia profissionais na confecção, estruturação e
+                                tradução automatizada de currículos corporativos, com sugestões sintáticas inteligentes
+                                baseadas em vagas de tecnologia e cibersegurança.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">OpenAI API</span>
+                                <span class="tag">Next.js</span>
+                                <span class="tag">Tailwind</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://curriculum-gratis-pj-v5iu.vercel.app/" target="_blank"
+                                    class="cyber-btn-mini github" data-sound="click">
+                                    <span class="btn-text">CODE_REPOS</span>
+                                </a>
+                                <a href="#" class="cyber-btn-mini demo" data-sound="click">
+                                    <span class="btn-text">RUN_DEMO</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJETO 2 -->
+                    <article class="project-card glass-panel tilt-card" data-sound="hover">
+                        <div class="project-header-panel">
+                            <!-- Procedural Cyber Background Visual -->
+                            <div class="project-visual-container">
+                                <div class="cyber-scan-glow"></div>
+                                <svg viewBox="0 0 200 120" class="project-vector-hud">
+                                    <rect x="10" y="10" width="180" height="100" fill="url(#cyan-blue)" rx="8"
+                                        stroke="rgba(0, 229, 255, 0.4)" stroke-width="1.5"></rect>
+                                    <!-- Dynamic Time Clock / Punch Visual -->
+                                    <circle cx="100" cy="60" r="30" fill="none" stroke="#FFFFFF" stroke-width="2"
+                                        stroke-dasharray="2 4"></circle>
+                                    <circle cx="100" cy="60" r="22" fill="none" stroke="#00E5FF" stroke-width="1.5">
+                                    </circle>
+                                    <line x1="100" y1="60" x2="100" y2="45" stroke="#00E5FF" stroke-width="2.5"
+                                        stroke-linecap="round"></line>
+                                    <line x1="100" y1="60" x2="115" y2="60" stroke="#00BFFF" stroke-width="2"
+                                        stroke-linecap="round"></line>
+                                    <line x1="10" y1="60" x2="190" y2="60" stroke="rgba(0, 229, 255, 0.15)"
+                                        stroke-width="1"></line>
+                                </svg>
+                                <span class="project-node-tag secure">SECURE</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-row">
+                                <span class="project-code">MODULE_02 // SYSTEM_PONTO</span>
+                                <span class="project-version">v2.4.1</span>
+                            </div>
+                            <h3 class="project-title">Sistema de Controle de Ponto</h3>
+                            <p class="project-description">
+                                Plataforma corporativa inteligente com autenticação forte e criptografia ponta a ponta
+                                para controle de jornada de trabalho. Possui filtros anti-fraude baseados em coordenadas
+                                de localização e auditoria de registros.Digite admin 123 para acessar o sistema!
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">JWT Auth</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://estruturando-um-sistema-de-registro-seven.vercel.app" target="_blank"
+                                    class="cyber-btn-mini github" data-sound="click">
+                                    <span class="btn-text">CODE_REPOS</span>
+                                </a>
+                                <a href="#" class="cyber-btn-mini demo" data-sound="click">
+                                    <span class="btn-text">RUN_DEMO</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJETO 3 -->
+                    <article class="project-card glass-panel tilt-card" data-sound="hover">
+                        <div class="project-header-panel">
+                            <!-- Procedural Cyber Background Visual -->
+                            <div class="project-visual-container">
+                                <div class="cyber-scan-glow"></div>
+                                <svg viewBox="0 0 200 120" class="project-vector-hud">
+                                    <rect x="10" y="10" width="180" height="100" fill="url(#cyan-blue)" rx="8"
+                                        stroke="rgba(0, 229, 255, 0.4)" stroke-width="1.5"></rect>
+                                    <!-- Dynamic Micro SaaS Nodes -->
+                                    <circle cx="50" cy="60" r="10" fill="#050505" stroke="#00E5FF" stroke-width="2">
+                                    </circle>
+                                    <circle cx="100" cy="40" r="10" fill="#050505" stroke="#00E5FF" stroke-width="2">
+                                    </circle>
+                                    <circle cx="100" cy="80" r="10" fill="#050505" stroke="#00E5FF" stroke-width="2">
+                                    </circle>
+                                    <circle cx="150" cy="60" r="10" fill="#050505" stroke="#00E5FF" stroke-width="2">
+                                    </circle>
+                                    <line x1="60" y1="58" x2="90" y2="42" stroke="#00BFFF" stroke-width="2"></line>
+                                    <line x1="60" y1="62" x2="90" y2="78" stroke="#00BFFF" stroke-width="2"></line>
+                                    <line x1="110" y1="42" x2="140" y2="58" stroke="#00E5FF" stroke-width="2"></line>
+                                    <line x1="110" y1="78" x2="140" y2="62" stroke="#00E5FF" stroke-width="2"></line>
+                                </svg>
+                                <span class="project-node-tag stable">INTEGRATED</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-row">
+                                <span class="project-code">Dashboard // F-35</span>
+                                <span class="project-version">v1.0.4</span>
+                            </div>
+                            <h3 class="project-title">Dashboard F-35 demostrativo</h3>
+                            <p class="project-description">
+                                Dashboard interativo desenvolvido para apresentar informações estratégicas sobre o caça
+                                F-35 Lightning II através de uma experiência visual moderna e imersiva.
+                                O projeto combina design futurista, visualização de dados e desenvolvimento web avançado
+                                para destacar especificações técnicas, capacidades operacionais e características
+                                da aeronave em uma interface intuitiva e responsiva.
+                            </p>
+
+                            <div class="project-tags">
+                                <span class="tag">Next.js</span>
+                                <span class="tag">MongoDB</span>
+                                <span class="tag">Stripe API</span>
+                                <span class="tag">Docker</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://saas-com-ia-84m2.vercel.app/" target="_blank"
+                                    class="cyber-btn-mini github" data-sound="click">
+                                    <span class="btn-text">CODE_REPOS</span>
+                                </a>
+                                <a href="#" class="cyber-btn-mini demo" data-sound="click">
+                                    <span class="btn-text">RUN_DEMO</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 5. PAINEL DE CONTROLE / DASHBOARD FUTURISTA -->
+        <section id="dashboard" class="dashboard-section scroll-reveal">
+            <div class="section-container">
+                <div class="cyber-section-header">
+                    <span class="sec-index">05 // COMMAND_CENTER</span>
+                    <h2 class="sec-title">DASHBOARD FUTURISTA E ANÁLISE</h2>
+                    <div class="sec-divider"></div>
+                </div>
+
+                <!-- Painel Grid do Dashboard -->
+                <div class="dashboard-grid">
+
+                    <!-- Painel 1: Inteligência Artificial & Rede Neural -->
+                    <div class="dash-panel glass-panel large">
+                        <div class="panel-header">
+                            <span class="header-icon ai-engine"></span>
+                            <h3 class="panel-title">AI NEURAL NETWORK OPTIMIZATION</h3>
+                            <span class="panel-status pulsed">CALCULATING_PROCS...</span>
+                        </div>
+                        <div class="panel-body">
+                            <!-- Gráfico de Accuracy da IA em tempo real -->
+                            <div class="canvas-chart-container">
+                                <canvas id="ai-training-chart"></canvas>
+                            </div>
+                            <div class="panel-diag-footer">
+                                <div class="diag-col">
+                                    <span class="label">LEARNING RATE</span>
+                                    <span class="val cyan-glow">0.0034</span>
+                                </div>
+                                <div class="diag-col">
+                                    <span class="label">LOSS RATIO</span>
+                                    <span class="val red-glow" id="loss-value">0.012</span>
+                                </div>
+                                <div class="diag-col">
+                                    <span class="label">NEURON DENSITY</span>
+                                    <span class="val green-glow">10.2M/S</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Painel 2: Conectividade Global & Globo Holográfico -->
+                    <div class="dash-panel glass-panel medium">
+                        <div class="panel-header">
+                            <span class="header-icon global-net"></span>
+                            <h3 class="panel-title">GLOBAL NETWORK CONTEXT</h3>
+                            <span class="panel-status glow-cyber-cyan">SYNC: ONLINE</span>
+                        </div>
+                        <div class="panel-body canvas-globe-wrapper">
+                            <!-- Canvas do Globo WebGL Tridimensional -->
+                            <canvas id="network-globe-canvas"></canvas>
+                            <div class="globe-overlay-hud">
+                                <div class="hud-hud-line">SYS_NODE_LOC: SOUTH_AMERICA</div>
+                                <div class="hud-hud-line">TUNNEL: TLS_AES_256_GCM</div>
+                                <div class="hud-hud-line">TARGET_PING: <span class="val green">12ms</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Painel 3: Monitor de Ameaças & Logs de Cibersegurança -->
+                    <div class="dash-panel glass-panel medium">
+                        <div class="panel-header">
+                            <span class="header-icon security-shield"></span>
+                            <h3 class="panel-title">CYBER THREAT SYSTEM LOGS</h3>
+                            <span class="panel-status danger">ACTIVE PROTECT</span>
+                        </div>
+                        <div class="panel-body terminal-logs-panel">
+                            <div class="terminal-cli" id="threat-logs-cli">
+                                <!-- Logs will scroll dynamically here via JS -->
+                            </div>
+                            <div class="threat-status-line">
+                                <span class="shield-label">OWASP INTRUSIONS BLOCKED:</span>
+                                <span class="shield-count" id="blocked-attacks-count">542</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Painel 4: Estatísticas Profissionais Globais -->
+                    <div class="dash-panel glass-panel small">
+                        <div class="panel-header">
+                            <span class="header-icon stats"></span>
+                            <h3 class="panel-title">DIAGNOSTIC STATS</h3>
+                            <span class="panel-status">LOGGED</span>
+                        </div>
+                        <div class="panel-body stats-panel">
+                            <div class="progress-bar-stat">
+                                <div class="stat-meta"><span>BACKEND_UPTIME</span><span>100%</span></div>
+                                <div class="stat-progress-bar">
+                                    <div class="fill" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="progress-bar-stat">
+                                <div class="stat-meta"><span>SECURITY_COMPLIANCE</span><span>98.6%</span></div>
+                                <div class="stat-progress-bar">
+                                    <div class="fill" style="width: 98.6%;"></div>
+                                </div>
+                            </div>
+                            <div class="progress-bar-stat">
+                                <div class="stat-meta"><span>AUTOMATION_EFFICIENCY</span><span>94.1%</span></div>
+                                <div class="stat-progress-bar">
+                                    <div class="fill" style="width: 94.1%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 6. CONTATO E COMUNICAÇÃO -->
+        <section id="contact" class="contact-section scroll-reveal">
+            <div class="section-container">
+                <div class="cyber-section-header">
+                    <span class="sec-index">06 // CONNECT</span>
+                    <h2 class="sec-title">ESTABELECER CONEXÃO SECRETA</h2>
+                    <div class="sec-divider"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Formulário Premium de Envio de Mensagem -->
+                    <div class="contact-form-wrapper glass-panel">
+                        <div class="form-header">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#00E5FF"
+                                stroke-width="2" class="form-sec-icon">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <h3 class="form-title">SYS_MAIL_CLIENT // PROTOCOLO TLS</h3>
+                        </div>
+                        <form id="cyber-contact-form" class="cyber-form">
+                            <div class="form-group">
+                                <label for="form-name" class="form-label">NOME / AGENTE</label>
+                                <div class="input-wrapper">
+                                    <input type="text" id="form-name" class="cyber-input"
+                                        placeholder="Digite seu nome ou identificador" required>
+                                    <span class="input-glow-line"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email" class="form-label">ENDEREÇO DE E-MAIL</label>
+                                <div class="input-wrapper">
+                                    <input type="email" id="form-email" class="cyber-input"
+                                        placeholder="seu-email@dominio.com" required>
+                                    <span class="input-glow-line"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-message" class="form-label">TRANSMISSÃO DE DADOS (MENSAGEM)</label>
+                                <div class="input-wrapper">
+                                    <textarea id="form-message" class="cyber-input textarea" rows="5"
+                                        placeholder="Codifique sua mensagem aqui..." required></textarea>
+                                    <span class="input-glow-line"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="cyber-btn primary-cyber" id="btn-submit-form"
+                                    data-sound="click">
+                                    <span class="btn-glow"></span>
+                                    <span class="btn-content">ENVIAR ENVELOPE SECRETO <span
+                                            class="arrow">//</span></span>
+                                </button>
+                            </div>
+
+                            <!-- Indicador de Envio -->
+                            <div id="form-status-alert" class="form-status-alert hidden">
+                                <span class="status-icon pulse"></span>
+                                <span id="form-status-text" class="status-msg">INICIALIZANDO PROTOCOLO DE
+                                    TRANSMISSÃO...</span>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Painel de Redes Sociais e Contatos Diretos -->
+                    <div class="contact-links-panel">
+
+                        <!-- Card do LinkedIn -->
+                        <a href="https://www.linkedin.com/in/everton-salles/" target="_blank"
+                            class="contact-social-card glass-panel linkedin" data-sound="click">
+                            <div class="social-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                    </path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </div>
+                            <div class="social-info">
+                                <span class="social-tag">LINKEDIN // ESTABLISH_CONN</span>
+                                <h4 class="social-name">Everton Mota</h4>
+                                <p class="social-desc">Conexão corporativa profissional, publicações sobre
+                                    Cybersecurity, Engenharia de Software e automação.</p>
+                            </div>
+                        </a>
+
+                        <!-- Card do GitHub -->
+                        <a href="https://github.com/EvertonSalles-Dev" target="_blank"
+                            class="contact-social-card glass-panel github" data-sound="click">
+                            <div class="social-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="social-info">
+                                <span class="social-tag">GITHUB // PULL_REQUEST</span>
+                                <h4 class="social-name">github.com/evertonmota</h4>
+                                <p class="social-desc">Códigos abertos, projetos acadêmicos e laboratórios de
+                                    inteligência artificial e cibersegurança.</p>
+                            </div>
+                        </a>
+
+                        <!-- Card do E-mail -->
+                        <a href="mailto:evertondamota12@gmail.com" class="contact-social-card glass-panel email"
+                            data-sound="click">
+                            <div class="social-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="social-info">
+                                <span class="social-tag">DIRECT_EMAIL // INBOX_REPLY</span>
+                                <h4 class="social-name">evertonmota@exemplo.com</h4>
+                                <p class="social-desc">Canal principal para convites de contratação, demandas de
+                                    consultoria ou projetos estruturados.</p>
+                            </div>
+                        </a>
+
+                        <!-- Card do WhatsApp -->
+                        <a href="https://wa.me/5521970432435" target="_blank"
+                            class="contact-social-card glass-panel whatsapp" data-sound="click">
+                            <div class="social-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="social-info">
+                                <span class="social-tag">WHATSAPP // REALTIME_CHAT</span>
+                                <h4 class="social-name">+55 (21) 97043-2435</h4>
+                                <p class="social-desc">Comunicação imediata por texto criptografado em ciano seguro.</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Geral -->
+    <footer class="hud-footer">
+        <div class="footer-left">
+            <span>© 2026 EVERTON MOTA. ENG. SOFTWARE DE DEFESA</span>
+        </div>
+        <div class="footer-right">
+            <span class="footer-badge">ENCRYPTION: SHIELD_ACTIVE</span>
+            <span class="footer-badge cyan">SYSTEM STATE: ONLINE</span>
+        </div>
+    </footer>
+
+    <!-- CDN Libraries: Three.js e dependências -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- CDN Libraries: GSAP (with ScrollTrigger & OrbitControls) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- OrbitControls loaded from static CDN to allow globe rotation dragging -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <!-- Custom Scripts modularizados -->
+    <script src="audio.js"></script>
+    <script src="three-scene.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
