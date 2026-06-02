@@ -29,6 +29,7 @@
 
     <!-- CSS Estilos -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="certificates.css">
 </head>
 
 <body>
@@ -91,8 +92,9 @@
             <a href="#about" class="nav-item" data-sound="hover"><span class="nav-index">02</span> SOBRE</a>
             <a href="#skills" class="nav-item" data-sound="hover"><span class="nav-index">03</span> CONHECIMENTOS</a>
             <a href="#projects" class="nav-item" data-sound="hover"><span class="nav-index">04</span> PROJETOS</a>
-            <a href="#dashboard" class="nav-item" data-sound="hover"><span class="nav-index">05</span> PAINEL</a>
-            <a href="#contact" class="nav-item" data-sound="hover"><span class="nav-index">06</span> CONTATO</a>
+            <a href="#certificates" class="nav-item" data-sound="hover"><span class="nav-index">05</span> CERTIFICADOS</a>
+            <a href="#dashboard" class="nav-item" data-sound="hover"><span class="nav-index">06</span> PAINEL</a>
+            <a href="#contact" class="nav-item" data-sound="hover"><span class="nav-index">07</span> CONTATO</a>
         </nav>
         <div class="hud-controls">
             <!-- Audio Switcher Synth -->
@@ -757,11 +759,59 @@
         </section>
 
 
-        <!-- 5. PAINEL DE CONTROLE / DASHBOARD FUTURISTA -->
+        <!-- 5. SEÇÃO CERTIFICADOS -->
+        <section id="certificates" class="certificates-section scroll-reveal">
+            <div class="section-container">
+                <div class="cyber-section-header">
+                    <span class="sec-index">05 // CREDENTIALS</span>
+                    <h2 class="sec-title">CERTIFICADOS E QUALIFICAÇÕES</h2>
+                    <div class="sec-divider"></div>
+                </div>
+
+                <!-- Deck de Certificados e Controles -->
+                <div class="certificates-deck-container">
+                    <!-- Seta Esquerda (Desktop) -->
+                    <button class="deck-nav-btn desktop-only" id="cert-prev-btn" title="Anterior" data-sound="click">
+                        <svg viewBox="0 0 24 24" stroke="currentColor">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+
+                    <!-- O Deck da Pilha 3D -->
+                    <div class="certificates-deck" id="certificates-deck">
+                        <!-- Gerado Dinamicamente via JavaScript -->
+                    </div>
+
+                    <!-- Seta Direita (Desktop) -->
+                    <button class="deck-nav-btn desktop-only" id="cert-next-btn" title="Próximo" data-sound="click">
+                        <svg viewBox="0 0 24 24" stroke="currentColor">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Controles de Navegação (Mobile Only) -->
+                <div class="deck-nav-buttons-mobile">
+                    <button class="deck-nav-btn" id="cert-prev-btn-mobile" title="Anterior" data-sound="click">
+                        <svg viewBox="0 0 24 24" stroke="currentColor">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <button class="deck-nav-btn" id="cert-next-btn-mobile" title="Próximo" data-sound="click">
+                        <svg viewBox="0 0 24 24" stroke="currentColor">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 6. PAINEL DE CONTROLE / DASHBOARD FUTURISTA -->
         <section id="dashboard" class="dashboard-section scroll-reveal">
             <div class="section-container">
                 <div class="cyber-section-header">
-                    <span class="sec-index">05 // COMMAND_CENTER</span>
+                    <span class="sec-index">06 // COMMAND_CENTER</span>
                     <h2 class="sec-title">DASHBOARD FUTURISTA E ANÁLISE</h2>
                     <div class="sec-divider"></div>
                 </div>
@@ -868,11 +918,11 @@
         </section>
 
 
-        <!-- 6. CONTATO E COMUNICAÇÃO -->
+        <!-- 7. CONTATO E COMUNICAÇÃO -->
         <section id="contact" class="contact-section scroll-reveal">
             <div class="section-container">
                 <div class="cyber-section-header">
-                    <span class="sec-index">06 // CONNECT</span>
+                    <span class="sec-index">07 // CONNECT</span>
                     <h2 class="sec-title">ESTABELECER CONEXÃO SECRETA</h2>
                     <div class="sec-divider"></div>
                 </div>
@@ -1041,10 +1091,38 @@
     <!-- OrbitControls loaded from static CDN to allow globe rotation dragging -->
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 
+    <!-- Modal de Visualização Ampliada de Certificados -->
+    <div id="cyber-cert-modal" class="certificates-modal">
+        <div class="modal-content-wrapper">
+            <div class="modal-header">
+                <div class="modal-title-wrap">
+                    <span class="modal-inst" id="modal-cert-inst">INSTITUIÇÃO</span>
+                    <h3 class="modal-title" id="modal-cert-title">Nome do Certificado</h3>
+                </div>
+                <div class="modal-close-btn" title="Fechar Visualização">
+                    <svg viewBox="0 0 24 24">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modal-cert-img" src="" alt="Visualização do Certificado">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a id="modal-cert-download" href="" download class="cyber-btn-mini download">Download PDF</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Custom Scripts modularizados -->
     <script src="audio.js"></script>
     <script src="three-scene.js"></script>
     <script src="app.js"></script>
+    <!-- Módulo de Certificados -->
+    <script src="certificates.js"></script>
 </body>
 
 </html>
