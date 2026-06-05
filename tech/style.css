@@ -1986,6 +1986,7 @@ section {
 /* Glitch Effect para o Nome no Hero */
 .glitch {
     position: relative;
+    animation: nameGlow 4s infinite ease-in-out;
 }
 
 .glitch::before,
@@ -1996,112 +1997,141 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--bg-deep-black);
+    background: transparent;
+    opacity: 0.8;
 }
 
 .glitch::before {
     left: 2px;
-    text-shadow: -1px 0 var(--color-neon-red);
-    clip: rect(44px, 450px, 56px, 0);
-    animation: glitchAnim-1 5s infinite linear alternate-reverse;
+    text-shadow: -2px 0 var(--color-neon-cyan);
+    clip: rect(0, 0, 0, 0);
+    animation: cyberSync-1 8s infinite linear;
 }
 
 .glitch::after {
     left: -2px;
-    text-shadow: -1px 0 var(--color-neon-cyan);
-    clip: rect(85px, 450px, 140px, 0);
-    animation: glitchAnim-2 5s infinite linear alternate-reverse;
+    text-shadow: 2px 0 var(--color-neon-red);
+    clip: rect(0, 0, 0, 0);
+    animation: cyberSync-2 8s infinite linear;
 }
 
-@keyframes glitchAnim-1 {
-    0% {
-        clip: rect(10px, 9999px, 66px, 0);
-    }
+@keyframes nameGlow {
 
-    10% {
-        clip: rect(30px, 9999px, 80px, 0);
-    }
-
-    20% {
-        clip: rect(8px, 9999px, 40px, 0);
-    }
-
-    30% {
-        clip: rect(45px, 9999px, 92px, 0);
-    }
-
-    40% {
-        clip: rect(62px, 9999px, 14px, 0);
-    }
-
-    50% {
-        clip: rect(78px, 9999px, 115px, 0);
-    }
-
-    60% {
-        clip: rect(25px, 9999px, 50px, 0);
-    }
-
-    70% {
-        clip: rect(90px, 9999px, 130px, 0);
-    }
-
-    80% {
-        clip: rect(15px, 9999px, 70px, 0);
-    }
-
-    90% {
-        clip: rect(55px, 9999px, 85px, 0);
-    }
-
+    0%,
     100% {
-        clip: rect(35px, 9999px, 95px, 0);
-    }
-}
-
-@keyframes glitchAnim-2 {
-    0% {
-        clip: rect(65px, 9999px, 120px, 0);
-    }
-
-    10% {
-        clip: rect(15px, 9999px, 40px, 0);
-    }
-
-    20% {
-        clip: rect(80px, 9999px, 115px, 0);
-    }
-
-    30% {
-        clip: rect(5px, 9999px, 60px, 0);
-    }
-
-    40% {
-        clip: rect(45px, 9999px, 92px, 0);
+        text-shadow: 0 0 10px rgba(0, 229, 255, 0.25), 0 0 2px rgba(0, 229, 255, 0.1);
     }
 
     50% {
-        clip: rect(70px, 9999px, 85px, 0);
+        text-shadow: 0 0 20px rgba(0, 229, 255, 0.55), 0 0 4px rgba(0, 229, 255, 0.2);
+    }
+}
+
+@keyframes cyberSync-1 {
+
+    0%,
+    92% {
+        clip: rect(0, 0, 0, 0);
+        opacity: 0;
     }
 
-    60% {
+    93% {
         clip: rect(10px, 9999px, 30px, 0);
+        opacity: 0.8;
+        transform: translateX(-1.5px);
     }
 
-    70% {
-        clip: rect(95px, 9999px, 140px, 0);
+    94% {
+        clip: rect(45px, 9999px, 75px, 0);
+        opacity: 0.6;
+        transform: translateX(1px);
     }
 
-    80% {
-        clip: rect(35px, 9999px, 65px, 0);
+    95% {
+        clip: rect(0, 0, 0, 0);
+        opacity: 0;
     }
 
-    90% {
-        clip: rect(50px, 9999px, 105px, 0);
+    96% {
+        clip: rect(8px, 9999px, 20px, 0);
+        opacity: 0.7;
+        transform: translateX(-2px);
+    }
+
+    97% {
+        clip: rect(55px, 9999px, 95px, 0);
+        opacity: 0.9;
+        transform: translateX(2px);
+    }
+
+    98% {
+        clip: rect(0, 0, 0, 0);
+        opacity: 0;
+    }
+
+    99% {
+        clip: rect(30px, 9999px, 50px, 0);
+        opacity: 0.8;
+        transform: translateX(-1px);
     }
 
     100% {
-        clip: rect(20px, 9999px, 80px, 0);
+        clip: rect(0, 0, 0, 0);
+        opacity: 0;
+    }
+}
+
+@keyframes cyberSync-2 {
+
+    0%,
+    92% {
+        clip: rect(0, 0, 0, 0);
+        opacity: 0;
+    }
+
+    93% {
+        clip: rect(50px, 9999px, 80px, 0);
+        opacity: 0.8;
+        transform: translateX(1.5px);
+    }
+
+    94% {
+        clip: rect(15px, 9999px, 40px, 0);
+        opacity: 0.6;
+        transform: translateX(-1px);
+    }
+
+    95% {
+        clip: rect(0, 0, 0, 0);
+        opacity: 0;
+    }
+
+    96% {
+        clip: rect(70px, 9999px, 110px, 0);
+        opacity: 0.7;
+        transform: translateX(2.5px);
+    }
+
+    97% {
+        clip: rect(12px, 9999px, 30px, 0);
+        opacity: 0.9;
+        transform: translateX(-2px);
+    }
+
+    98% {
+        clip: rect(0, 0, 0, 0);
+        opacity: 0;
+    }
+
+    99% {
+        clip: rect(40px, 9999px, 85px, 0);
+        opacity: 0.8;
+        transform: translateX(1px);
+    }
+
+    100% {
+        clip: rect(0, 0, 0, 0);
+        opacity: 0;
     }
 }
 

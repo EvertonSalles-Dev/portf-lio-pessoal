@@ -16,17 +16,17 @@ function createNeonParticleTexture(colorHex = '#00E5FF') {
     canvas.width = 32;
     canvas.height = 32;
     const ctx = canvas.getContext('2d');
-    
+
     // Desenhar gradiente radial suave de branco no centro para o neon-cyan nas bordas
     const gradient = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
     gradient.addColorStop(0, '#FFFFFF');
     gradient.addColorStop(0.2, colorHex);
     gradient.addColorStop(0.5, 'rgba(0, 191, 255, 0.35)');
     gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
-    
+
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, 32, 32);
-    
+
     const texture = new THREE.CanvasTexture(canvas);
     return texture;
 }
@@ -147,19 +147,19 @@ function initHeroHologram() {
     const lineCount = 30;
     const lineGeometry = new THREE.BufferGeometry();
     const linePositions = new Float32Array(lineCount * 6); // 2 pontos por linha (x,y,z)
-    
+
     // Escolher vértices de partículas aleatórias e conectá-los
     for (let i = 0; i < lineCount; i++) {
         const p1Idx = Math.floor(Math.random() * particleCount);
         const p2Idx = Math.floor(Math.random() * particleCount);
-        
+
         const p1 = originalPositions[p1Idx];
         const p2 = originalPositions[p2Idx];
 
         linePositions[i * 6] = p1.x;
         linePositions[i * 6 + 1] = p1.y;
         linePositions[i * 6 + 2] = p1.z;
-        
+
         linePositions[i * 6 + 3] = p2.x;
         linePositions[i * 6 + 4] = p2.y;
         linePositions[i * 6 + 5] = p2.z;
@@ -215,15 +215,15 @@ function initHeroHologram() {
         scrollTimeline.to({ progress: 0 }, {
             progress: 1,
             ease: "power2.inOut",
-            onUpdate: function() {
+            onUpdate: function () {
                 const p = this.targets()[0].progress;
                 const posAttr = corePoints.geometry.attributes.position;
-                
+
                 for (let i = 0; i < particleCount; i++) {
                     const orig = originalPositions[i];
                     // Multiplicador de dispersão conforme o scroll avança
                     const dispFactor = 1 + p * 2.2;
-                    
+
                     posAttr.setXYZ(
                         i,
                         orig.x * dispFactor,
@@ -301,10 +301,10 @@ function initHeroHologram() {
     window.addEventListener("resize", () => {
         width = container.clientWidth;
         height = container.clientHeight;
-        
+
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
-        
+
         renderer.setSize(width, height);
     });
 }
@@ -416,7 +416,7 @@ function initNetworkGlobe() {
         // Criar vetor central elevado para formar a curva bezier (arco)
         const midPoint = new THREE.Vector3().addVectors(startNode, endNode).multiplyScalar(0.5);
         const distance = startNode.distanceTo(endNode);
-        
+
         // Elevar o ponto médio proporcionalmente à distância para dar o efeito parabólico
         midPoint.normalize().multiplyScalar(globeRadius + distance * 0.25);
 
@@ -424,7 +424,7 @@ function initNetworkGlobe() {
         const curve = new THREE.QuadraticBezierCurve3(startNode, midPoint, endNode);
         const points = curve.getPoints(30);
         const curveGeometry = new THREE.BufferGeometry().setFromPoints(points);
-        
+
         const line = new THREE.Line(curveGeometry, arcMaterial);
         globeGroup.add(line);
 
@@ -481,10 +481,10 @@ function initNetworkGlobe() {
     window.addEventListener("resize", () => {
         width = container.clientWidth;
         height = container.clientHeight;
-        
+
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
-        
+
         renderer.setSize(width, height);
     });
 }

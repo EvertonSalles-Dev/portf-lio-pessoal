@@ -202,15 +202,15 @@ function executeBootSequence() {
         if (progress >= 100) {
             progress = 100;
             clearInterval(interval);
-            
+
             // Conclusão
             setTimeout(() => {
                 // Tocar sinal sonoro de sucesso
                 window.CyberSynth.playSuccess();
-                
+
                 // Animar desvanecimento do loader
                 loader.classList.add("fade-out");
-                
+
                 // Ativar primeira animação de fade-in do Hero
                 setTimeout(() => {
                     loader.style.display = "none";
@@ -243,10 +243,10 @@ function executeBootSequence() {
 function revealHeroElements() {
     if (typeof gsap !== 'undefined') {
         const tl = gsap.timeline();
-        
+
         // Revelar HUD principal
         tl.fromTo(".hud-header", { y: -50, opacity: 0 }, { y: 0, opacity: 1, duration: 1.0, ease: "power3.out" });
-        
+
         // Glitch Name e Infos do Hero
         tl.fromTo(".cyber-pretitle-container", { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, "-=0.6");
         tl.fromTo(".hero-name", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, "-=0.4");
@@ -276,7 +276,7 @@ function initTiltCards() {
     cards.forEach(card => {
         card.addEventListener("mousemove", (e) => {
             const rect = card.getBoundingClientRect();
-            
+
             // Posição relativa do cursor dentro do card
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
@@ -291,7 +291,7 @@ function initTiltCards() {
 
             // Aplicar matriz tridimensional
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
-            
+
             // Setar variáveis CSS customizadas para guiar o reflexo de gradiente radial
             card.style.setProperty("--mouse-x", `${percentX * 100}%`);
             card.style.setProperty("--mouse-y", `${percentY * 100}%`);
@@ -353,7 +353,7 @@ function initAiRealtimeChart() {
 
     const points = [];
     const maxPoints = 50;
-    
+
     // Popular pontos iniciais simulando aprendizado inicial (flutuações subindo)
     for (let i = 0; i < maxPoints; i++) {
         const factor = i / maxPoints;
@@ -395,7 +395,7 @@ function initAiRealtimeChart() {
         // Desenhar Grid HUD no fundo do gráfico
         ctx.strokeStyle = "rgba(0, 229, 255, 0.05)";
         ctx.lineWidth = 1;
-        
+
         // Linhas Horizontais
         for (let y = 0; y < height; y += 40) {
             ctx.beginPath();
@@ -417,7 +417,7 @@ function initAiRealtimeChart() {
         ctx.beginPath();
 
         const stepX = width / (maxPoints - 1);
-        
+
         points.forEach((val, idx) => {
             // Mapear valor de acurácia 0.0 a 1.0 para coordenadas y físicas do canvas (com padding vertical)
             const x = idx * stepX;
@@ -429,17 +429,17 @@ function initAiRealtimeChart() {
                 ctx.lineTo(x, y);
             }
         });
-        
+
         ctx.shadowBlur = 10;
         ctx.shadowColor = "rgba(0, 229, 255, 0.6)";
         ctx.stroke();
-        
+
         // Preenchimento de Gradiente Translúcido abaixo da curva
         ctx.shadowBlur = 0; // Desativar shadow para preenchimento rápido
         const fillGrad = ctx.createLinearGradient(0, 0, 0, height);
         fillGrad.addColorStop(0, "rgba(0, 229, 255, 0.15)");
         fillGrad.addColorStop(1, "rgba(0, 0, 0, 0)");
-        
+
         ctx.fillStyle = fillGrad;
         ctx.lineTo(width, height);
         ctx.lineTo(0, height);
@@ -491,7 +491,7 @@ function initCyberSecurityLogs() {
 
     function addLog() {
         const template = logTemplates[Math.floor(Math.random() * logTemplates.length)];
-        
+
         // Formatar horário do log
         const t = new Date();
         const timeStr = `[${String(t.getHours()).padStart(2, '0')}:${String(t.getMinutes()).padStart(2, '0')}:${String(t.getSeconds()).padStart(2, '0')}]`;
@@ -573,7 +573,7 @@ function initContactForm() {
             statusAlert.className = "form-status-alert success";
             statusText.innerText = "ENVELOPE SECURELY TRANSMITTED. RESPONSE PROTOCOL INITIALIZED.";
             window.CyberSynth.playSuccess();
-            
+
             // Resetar formulário
             form.reset();
             if (submitBtn) submitBtn.disabled = false;
@@ -624,7 +624,7 @@ function initAmbientParticles() {
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
-    
+
     let width = window.innerWidth;
     let height = window.innerHeight;
     canvas.width = width;
