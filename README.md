@@ -34,9 +34,8 @@ Projetos acadêmicos e pessoais
 https://portf-lio-pessoal-delta.vercel.app/
 
 📫 Contato
-LinkedIn: www.linkedin.com/in/everton-mota-2b9111289
-GitHub: github.com/EvertonMota23
-E-mail: seuemail@email.com
+LinkedIn: https://www.linkedin.com/in/everton-salles/
+E-mail: evertondamota12@gmail.com
 🎯 Objetivo
 
 Estou em constante aprendizado e desenvolvimento na área de tecnologia, buscando oportunidades para aplicar meus conhecimentos, adquirir novas experiências e contribuir para projetos inovadores.
